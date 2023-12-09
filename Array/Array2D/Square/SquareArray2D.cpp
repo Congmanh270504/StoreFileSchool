@@ -2,24 +2,17 @@
 
 void menu()
 {
-	printf("=============================menu================================\n");
-	printf("|| ************************* init **************************** ||\n");
+	printf("=============================Menu================================\n");
+	printf("|| ************************* Init **************************** ||\n");
 	printf("|| * 1.Nhap mang 2 chieu va xuat mang 2 chieu                * ||\n");
 	printf("|| * 2.Tao mang 2 chieu va xuat ra man hinh                  * ||\n");
 	printf("|| * 3.Doc mang 2 chieu tu file va xuat ra man hinh          * ||\n");
-	printf("|| ************************ getnumber ************************ ||\n");
-	printf("|| * 4.Xuat cac phan tu tren duong cheo chinh                * ||\n");
-	printf("|| * 5.Xuat cac phan tu song song duong cheo chinh           * ||\n");
-	printf("|| * 6.Tong cac so lon hon tri tuyet doi sau no              * ||\n");
-	printf("|| ***************************sort**************************** ||\n");
-	printf("|| * 7.Sap xep zic-zac                                       * ||\n");
-	printf("|| * 8.Sap xep duong cheo chinh tang dan                     * ||\n");
-	printf("|| * 9.Tung dong chan dau dong le cuoi dong                  * ||\n");
-	printf("|| * 10.Kiem tra mang co doi xung qua duong cheo chinh khong?* ||\n");
-	printf("|| **************************writefile************************ ||\n");
-	printf("|| * 30.Ghi mang so phan so tu file                          * ||\n");
+	printf("|| ************************  Exam **************************** ||\n");
+	//printf("|| * 4.Xuat cac phan tu tren duong cheo chinh                * ||\n");
+	printf("|| **************************writeFile************************ ||\n");
+	printf("|| * 5.Ghi mang so phan so tu file                          * ||\n");
 	printf("|| * 0.Thoat chuong trinh			             * ||\n");
-	printf("|| ***************************end***************************** ||\n");
+	printf("|| ***************************End***************************** ||\n");
 	printf("=================================================================\n");
 }
 void init(int**& a, int& m)
@@ -119,24 +112,7 @@ void getNumberMainLine(int**& a, int& m)
 	}
 	printf("\n");
 }
-void getNumberParallelMainLine(int**& a, int& m)
-{
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			if (i == 0 && j == m - 1 || i == m - 1 && j == 0 || i == j)
-			{
-				continue;
-			}
-			else
-			{
-				printf("\t%d", a[i][j]);
-			}
-		}
-		printf("\n");
-	}
-}
+
 void freeMatrix(int**& a, int m)
 {
 	for (int i = 0; i < m; i++)
@@ -201,20 +177,6 @@ void interchangeSortDecrease(int* a, int m)
 		}
 	}
 }
-void evenIncreaseDdecreaseRow(int** a, int& m)
-{
-	for (int i = 0; i < m; i++)
-	{
-		if (i % 2 == 0)
-		{
-			interchangeSortIncrease(a[i], m);
-		}
-		else
-		{
-			interchangeSortDecrease(a[i], m);
-		}
-	}
-}
 void sortZicZac(int** a, int& m)
 {
 	int* b = new int[m * m];
@@ -238,76 +200,4 @@ void sortZicZac(int** a, int& m)
 		}
 	}
 	evenIncreaseDdecreaseRow(a, m);// update
-}
-void interchangeSortMainLineIncrease(int**& a, int& m)
-{
-	int* b = new int[m];
-	int k = 0;
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			if (i == j)
-			{
-				b[k] = a[i][j];
-				k++;
-			}
-		}
-	}
-	interchangeSortIncrease(b, k);
-	k = 0;
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			if (i == j)
-			{
-				a[i][j] = b[k];
-				k++;
-			}
-		}
-	}
-}
-void sortFirstEvenLastOdd(int*& a, int& m)
-{
-	int* b = new int[m];
-	int j = 0;
-	for (int i = 0; i < m; i++)
-	{
-		if (a[i] % 2 == 0)
-		{
-			b[j] = a[i];
-			j++;
-		}
-	}
-	for (int i = 0; i < m; i++)
-	{
-		if (a[i] % 2 != 0)
-		{
-			b[j] = a[i];
-			j++;
-		}
-	}
-	a = b;
-}
-void setArraySortFirstEvenLastOdd(int**& a, int& m)
-{
-	for (int i = 0; i < m; i++)
-	{
-		sortFirstEvenLastOdd(a[i], m);
-	}
-}
-int checkSymmetryArray2D(int**& a, int& m)
-{
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			if (a[i][j] != a[j][i])
-			{
-				return 0;
-			}
-		}
-	}
-	return 1;
 }
