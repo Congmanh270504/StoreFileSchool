@@ -38,74 +38,13 @@ int main()
 			}
 			else
 			{
-				printf("Cac phan tu tren duong cheo chinh la: ");
-				getNumberMainLine(a, m);
-			}
-			break;
-		case 5:
-			if (a == NULL)
-			{
-				printf("Please! choose option 1,2 or 3 \n ");
-			}
-			else
-			{
-				printf("Cac phan tu  song song duong cheo chinh la:\n");
-				getNumberParallelMainLine(a, m);
-			}
-			break;
-
-		case 7:
-			if (a == NULL)
-			{
-				printf("Please! choose option 1,2 or 3 \n ");
-			}
-			else
-			{
 				printf("Ma tran sau khi sap xep Zic-Zac la:\n");
 				sortZicZac(a, m);
 				Output(a, m);
 			}
 			break;
-		case 8:
-			if (a == NULL)
-			{
-				printf("Please! choose option 1,2 or 3 \n ");
-			}
-			else
-			{
-				printf("Ma tran sau khi sap xep duong cheo chinh tang dan  la:\n");
-				interchangeSortMainLineIncrease(a, m);
-				Output(a, m);
-			}
-			break;
-		case 9:
-			if (a == NULL)
-			{
-				printf("Please! choose option 1,2 or 3 \n ");
-			}
-			else
-			{
-				printf("Ma tran sau khi chan dau dong le cuoi dong la:\n");
-				setArraySortFirstEvenLastOdd(a, m);
-				Output(a, m);
-			}
-			break;
-		case 10:
-			if (a == NULL)
-			{
-				printf("Please! choose option 1,2 or 3 \n ");
-			}
-			else
-			{
-				if (checkSymmetryArray2D(a, m))
-				{
-					printf("Mang doi xung qua duong cheo chinh!!\n");
-				}
-				else
-				{
-					printf("Mang khong doi xung qua duong cheo chinh!!\n");
-				}
-			}
+			case 5:
+				//ghi file
 			break;
 		case 0:
 			printf("Have a nice day sir!!\n");
